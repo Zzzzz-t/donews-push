@@ -1,0 +1,33 @@
+{
+    "name": "tlsss/donews-push",
+    "description": "整合了小米推送、华为推送、友盟推送、vivo、苹果推送服务的整合包。",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tls",
+            "email": "1796058758@qq.com"
+        }
+    ],
+    "require": {
+        "PHP": ">=5.6.0",
+        "singiu/http-php": "^1.0.0",
+        "predis/predis": "^1.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "tlsss\\DoNewsPush\\DoNewsPushServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "symfony/dotenv": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "tlsss\\DoNewsPush\\": "src/"
+        }
+    }
+}
