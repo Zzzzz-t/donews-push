@@ -76,30 +76,30 @@ class Push implements DoNewsPusher
     /**
      * 设置用户token
      */
-    public function setToken($platform, $app_id, $user_id, $deviceToken)
+    public static function setToken($platform, $app_id, $user_id, $deviceToken)
     {
+        if (!$app_id || !$user_id || !$deviceToken || !$platform) {
+            return self::error();
+        }
         static::$_redis->set($app_id . ":" . $user_id . ":regid:", $platform .":". $deviceToken);
-        return $this->success();
+        return self::success();
     }
 
 
     /**
      * 获取用户token
      */
-    public function getToken($platform, $app_id, $user_id)
+    public static function getToken($app_id, $user_id)
     {
-        if (!is_array($user_id)) {
-            return false;
-        }
         return static::$_redis->get($app_id . ":" . $user_id . ":regid:");
     }
 
-    public function success()
+    public static function success()
     {
         throw new PushException("success", 200);
     }
 
-    public function error()
+    public static function error()
     {
         throw new PushException("参数错误", 405);
     }

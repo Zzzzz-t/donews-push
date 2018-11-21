@@ -15,6 +15,8 @@ php artisan vendor:publish
 
 ## 使用
 - 设置 `DeviceToken` 
-    - 本拓展包中包含了设置token的路由配置, 无需手动编写, 路径配置在 `config/push.php` 下 `route` 选项中;
+    - 需要调用setToken方法 传入$platform, $app_id, $user_id, $deviceToken;
+- 设置 `获取DeviceToken` 
+    - 需要调用setToken方法 app_id user_id;
 
 - 发布时, 可以直接注入 `tlsss\\DoNewsPush\Push` 类, 调用 `send()` 方法

@@ -15,7 +15,7 @@ class DoNewsPushServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/push.php' => config_path('push.php'),
         ]);
-        $this->loadRoutesFrom(__DIR__ . '/Routes.php');
+        // $this->loadRoutesFrom(__DIR__ . '/Routes.php');
     }
 
     public function register()
