@@ -79,10 +79,10 @@ class Push implements DoNewsPusher
     public static function setToken($platform, $app_id, $user_id, $deviceToken)
     {
         if (!$app_id || !$user_id || !$deviceToken || !$platform) {
-            return self::error();
+            return false;
         }
         static::$_redis->set($app_id . ":" . $user_id . ":regid:", $platform .":". $deviceToken);
-        return self::success();
+        return true;
     }
 
 
