@@ -74,7 +74,7 @@ class Push implements DoNewsPusher
     }
 
     /**
-     * 设置用户token
+     * 根据用户ID设置用户token
      */
     public static function setToken($platform, $app_id, $user_id, $deviceToken)
     {
@@ -87,11 +87,33 @@ class Push implements DoNewsPusher
 
 
     /**
-     * 获取用户token
+     * 根据用户ID获取用户token
      */
     public static function getToken($app_id, $user_id)
     {
         return static::$_redis->get($app_id . ":" . $user_id . ":regid:");
+    }
+
+    /**
+     * 根据用户ID设置用户token
+     */
+    public static function setDeviceToken($app_id, $list_name, $platform, $deviceToken)
+    {
+        return static::$_redis->lpush($app_id.$list_name, $platform.':'.$deviceToken);
+    }
+
+    /**
+     * 根据用户ID设置用户token
+     */
+    public static function getDeviceToken($app_id, $list_name, $page = 1, $pageSize = 100)
+    {
+        return static::$_redis->Redis::lrange($app_id.$list_name, ($page-1)*$pageSize ,$pageSize);
+    }
+
+    //返回列表长度
+    public static function getListLen($app_id, $list_name)
+    {
+        return static::$_redis::llen($app_id.$list_name);
     }
 
     public static function success()
