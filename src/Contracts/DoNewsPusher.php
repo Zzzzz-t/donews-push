@@ -10,7 +10,7 @@ interface DoNewsPusher
 
    public static function getToken($app_id, $user_id);
 
-   public static function setDeviceToken($platform, $app_id, $device_id, $deviceToken);
+   public static function setDeviceToken($app_id, $list_name, $device_id, $deviceToken);
 
    public static function getDeviceToken($app_id, $list_name, $page = 1, $pageSize = 100);
 
