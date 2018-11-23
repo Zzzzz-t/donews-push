@@ -1,6 +1,6 @@
 {
     "name": "tlsss/donews-push",
-    "description": "整合了小米推送、华为推送、友盟推送、vivo、苹果推送服务的整合包。",
+    "description": "小米推送、魅族、华为推送、vivo、苹果推送。",
     "type": "library",
     "license": "MIT",
     "authors": [
