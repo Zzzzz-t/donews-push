@@ -47,6 +47,12 @@ return [
             "appId" => env("MEIZU_APP_ID", null),
             "appSecret" => env("MEIZU_APP_SECRET", null),
         ],
+
+        "oppo" => [
+            "appKey" => env("OPPO_APP_KEY", null),
+            "masterSecret" => env("OPPO_MASTER_SECRET", null),
+            "clickActionActivity" => env("OPPO_CLICK_ACTION_ACTIVITY", null),
+        ],
     ],
 
     "route" => [
