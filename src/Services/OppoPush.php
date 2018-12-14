@@ -3,7 +3,7 @@
 namespace tlsss\DoNewsPush\Services;
 use Illuminate\Redis\RedisManager as Redis;
 
-class VivoPush
+class OppoPush
 {
     private $_accessToken;
     private $_masterSecret;
