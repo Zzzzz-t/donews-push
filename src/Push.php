@@ -113,7 +113,7 @@ class Push implements DoNewsPusher
     //返回列表长度
     public static function getListLen($app_id, $list_name)
     {
-        return static::$_redis::llen($app_id.$list_name);
+        return static::$_redis->llen($app_id.$list_name);
     }
 
     public static function success()
