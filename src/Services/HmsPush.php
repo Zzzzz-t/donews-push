@@ -114,8 +114,8 @@ class HmsPush
                     ],
                     'ext' => [
                         'customize' => [
-                            'type' => $type,
-                            'id' => $id
+                            ['type' => $type],
+                            ['id' => $id]
                         ]
                     ],
                 ]
