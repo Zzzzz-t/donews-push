@@ -107,7 +107,7 @@ class Push implements DoNewsPusher
      */
     public static function getDeviceToken($app_id, $list_name, $page = 1, $pageSize = 100)
     {
-        return static::$_redis->Redis::lrange($app_id.$list_name, ($page-1)*$pageSize ,$pageSize);
+        return static::$_redis->lrange($app_id.$list_name, ($page-1)*$pageSize ,$pageSize);
     }
 
     //返回列表长度
