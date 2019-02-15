@@ -63,7 +63,9 @@ class MiPush
             'extra.notify_effect' => 2, // 预定义通知栏消息的点击行为，1 = 打开 app 的 Launcher Activity，2 = 打开 app 的任一 Activity（还需要 extra.intent_uri）,3 = 打开网页（还需要传入 extra.web_uri）
             'extra.intent_uri' => $this->_intent_uri,
             'restricted_package_name' => $this->_appPackageName,
-            'registration_id' => $deviceToken
+            'registration_id' => $deviceToken,
+            'extra.type' => $type,
+            'extra.id' => $id,
         ];
 
         $response = $this->_request->post($this->_url, [
