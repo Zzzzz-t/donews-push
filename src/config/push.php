@@ -18,6 +18,7 @@ return [
         "mi" => [
             "app_package_name" => env("MI_APP_PACKAGE_NAME", null),
             "app_secret" => env("MI_APP_SECRET", null),
+            "intent_uri" => env("MI_APP_INTENT_URI", null),
         ],
 
         "umeng" => [
