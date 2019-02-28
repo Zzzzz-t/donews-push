@@ -34,11 +34,11 @@ class MiPush
             throw new \Exception('Cannot found configuration: mi.app_secret!');
         }
 
-        if (!empty(config('push.platform.mi.intent_uri'))) {
-            $this->_appSecret = config('push.platform.mi.intent_uri');
-        } else {
-            throw new \Exception('Cannot found configuration: mi.intent_uri!');
-        }
+        // if (!empty(config('push.platform.mi.intent_uri'))) {
+        //     $this->_appSecret = config('push.platform.mi.intent_uri');
+        // } else {
+        //     throw new \Exception('Cannot found configuration: mi.intent_uri!');
+        // }
 
         $this->_request = new Request();
     }
@@ -61,8 +61,8 @@ class MiPush
             'payload' => $message, // 消息内容。
             'notify_type' => -1, // 提示通知默认设定，-1 = DEFAULT_ALL。
             'extra.notify_effect' => 2, // 预定义通知栏消息的点击行为，1 = 打开 app 的 Launcher Activity，2 = 打开 app 的任一 Activity（还需要 extra.intent_uri）,3 = 打开网页（还需要传入 extra.web_uri）
-            'extra.intent_uri' => $this->_intent_uri,
-            'restricted_package_name' => $this->_appPackageName,
+            'extra.intent_uri' => 'intent:#Intent;component=com.wanmei.a9vg/.common.activitys.NotifyActivity;end'
+            'restricted_package_name' => 'com.wanmei.a9vg',
             'registration_id' => $deviceToken,
             'extra.type' => $type,
             'extra.id' => $id,

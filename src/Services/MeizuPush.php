@@ -32,11 +32,11 @@ class MeizuPush
         } else {
             throw new \Exception('Cannot found configuration: meizu.appSecret!');
         }
-        if (!empty(config('push.platform.meizu.appActivity'))) {
-            $this->_appActivity = config('push.platform.meizu.appActivity');
-        } else {
-            throw new \Exception('Cannot found configuration: meizu.appActivity!');
-        }
+        // if (!empty(config('push.platform.meizu.appActivity'))) {
+        //     $this->_appActivity = config('push.platform.meizu.appActivity');
+        // } else {
+        //     throw new \Exception('Cannot found configuration: meizu.appActivity!');
+        // }
 
         $this->_mzPush = new MzPush($this->_appId, $this->_appSecret);
 
@@ -59,7 +59,7 @@ class MeizuPush
         $varnishedMessage->setTitle($title)
                          ->setContent($message)
                          ->setClickType(1)
-                         ->setActivity($this->_appActivity)
+                         ->setActivity('com.wanmei.a9vg.common.activitys.NotifyActivity')
                          ->setUrl(null)
                          ->setNoticeExpandType(1)
                          ->setNoticeExpandContent('扩展内容')

@@ -108,7 +108,7 @@ class HmsPush
                         'action' => [
                             'type' => 1,
                             'param' => [
-                                'intent' => config('push.platform.huawei.intent')
+                                'intent' => '#Intent;compo=com.wanmei.a9vg/.common.activitys.Activity;S.W=U;end'
                             ]
                         ]
                     ],
