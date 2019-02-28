@@ -12,6 +12,7 @@ class MeizuPush
     private $_mzPush;
     private $_appId;
     private $_appSecret;
+    private $_appActivity;
 
     /**
      * 构造函数。
@@ -31,10 +32,10 @@ class MeizuPush
         } else {
             throw new \Exception('Cannot found configuration: meizu.appSecret!');
         }
-        if (!empty(config('push.platform.meizu.activity'))) {
-            $this->_appSecret = config('push.platform.meizu.activity');
+        if (!empty(config('push.platform.meizu.appActivity'))) {
+            $this->_appActivity = config('push.platform.meizu.appActivity');
         } else {
-            throw new \Exception('Cannot found configuration: meizu.activity!');
+            throw new \Exception('Cannot found configuration: meizu.appActivity!');
         }
 
         $this->_mzPush = new MzPush($this->_appId, $this->_appSecret);
@@ -58,7 +59,7 @@ class MeizuPush
         $varnishedMessage->setTitle($title)
                          ->setContent($message)
                          ->setClickType(1)
-                         ->setActivity(config('push.platform.meizu.activity'))
+                         ->setActivity($this->_appActivity)
                          ->setUrl(null)
                          ->setNoticeExpandType(1)
                          ->setNoticeExpandContent('扩展内容')

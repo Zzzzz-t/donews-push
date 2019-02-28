@@ -47,7 +47,7 @@ return [
         "meizu" => [
             "appId" => env("MEIZU_APP_ID", null),
             "appSecret" => env("MEIZU_APP_SECRET", null),
-            "activity" => env("MEIZU_APP_ACTIVITY", null),
+            "appActivity" => env("MEIZU_APP_ACTIVITY", null),
         ],
 
         "oppo" => [
