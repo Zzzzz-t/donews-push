@@ -106,9 +106,9 @@ class HmsPush
                             'title' => $title
                         ],
                         'action' => [
-                            'type' => 3,
+                            'type' => 1,
                             'param' => [
-                                'appPkgName' => config('push.platform.huawei.appPkgName')
+                                'intent' => config('push.platform.huawei.intent')
                             ]
                         ]
                     ],

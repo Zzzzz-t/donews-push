@@ -29,7 +29,12 @@ class MeizuPush
         if (!empty(config('push.platform.meizu.appSecret'))) {
             $this->_appSecret = config('push.platform.meizu.appSecret');
         } else {
-            throw new \Exception('Cannot found configuration: vivo.appSecret!');
+            throw new \Exception('Cannot found configuration: meizu.appSecret!');
+        }
+        if (!empty(config('push.platform.meizu.activity'))) {
+            $this->_appSecret = config('push.platform.meizu.activity');
+        } else {
+            throw new \Exception('Cannot found configuration: meizu.activity!');
         }
 
         $this->_mzPush = new MzPush($this->_appId, $this->_appSecret);
@@ -52,7 +57,8 @@ class MeizuPush
         $varnishedMessage = new VarnishedMessage();
         $varnishedMessage->setTitle($title)
                          ->setContent($message)
-                         ->setClickType(0)
+                         ->setClickType(1)
+                         ->setActivity(config('push.platform.meizu.activity'))
                          ->setUrl(null)
                          ->setNoticeExpandType(1)
                          ->setNoticeExpandContent('扩展内容')

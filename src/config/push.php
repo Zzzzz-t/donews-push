@@ -29,7 +29,7 @@ return [
         "huawei" => [
             "client_id" => env("HUAWEI_CLIENT_ID", null),
             "client_secret" => env("HUAWEI_CLIENT_SECRET", null),
-            'appPkgName' => env('HUAWEI_APP_PKG_NAME',null),
+            'intent' => env('HUAWEI_APP_INTENT',null),
         ],
 
         "apple" => [
@@ -47,6 +47,7 @@ return [
         "meizu" => [
             "appId" => env("MEIZU_APP_ID", null),
             "appSecret" => env("MEIZU_APP_SECRET", null),
+            "activity" => env("MEIZU_APP_ACTIVITY", null),
         ],
 
         "oppo" => [
