@@ -2,9 +2,7 @@
 
 namespace tlsss\DoNewsPush\Services;
 
-use tlsss\DoNewsPush\Contracts\DoNewsPusher;
-
-class ApnsPush implements DoNewsPusher
+class ApnsPush
 {
     const ENVIRONMENT_PRODUCTION = 0;
     const ENVIRONMENT_SANDBOX = 1;
@@ -71,7 +69,7 @@ class ApnsPush implements DoNewsPusher
         $url = $this->_serverUrl[$this->_environment];
         $socketContext = stream_context_create([
             'ssl' => [
-                'local_cert' => $this->_certificate,
+                'local_cert' => base_path().'/'.$this->_certificate,
                 'passphrase' => $this->_certificatePassphrase
             ]
         ]);
