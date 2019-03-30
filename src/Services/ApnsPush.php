@@ -35,6 +35,7 @@ class ApnsPush
     protected $type;
     protected $id;
 
+
     /**
      * ApnsPush constructor.
      *
