@@ -134,7 +134,7 @@ class HmsPush
                 'access_token' => $this->_accessToken,
                 'nsp_ts' => $time,
                 'nsp_svc' => 'openpush.message.api.send',
-                'device_token_list' => json_encode([$deviceToken]),
+                'device_token_list' => json_encode($deviceToken),
                 'payload' => $payload
             ]
         ]);
