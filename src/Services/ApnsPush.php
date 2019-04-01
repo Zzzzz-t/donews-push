@@ -165,7 +165,7 @@ class ApnsPush
 
     public function sendMessage($deviceToken, $title, $message, $type, $id)
     {
-        $this->addRecipient($deviceToken);
+        // $this->addRecipient($deviceToken);
         $this->setTitle($title);
         $this->setText($message);
         $this->setBadge(1);
@@ -173,7 +173,16 @@ class ApnsPush
         $this->setType($type);
         $this->setId($id);
         $this->_connect();
-        $this->_send();
+        // $this->_send();
+        if(is_array($deviceToken)){
+            foreach ($deviceToken as $key => $val){
+                $this->addRecipient($val);
+                $this->_send();
+            }
+        }else{
+            $this->addRecipient($deviceToken);
+            $this->_send();
+        }
         $this->_disconnect();
     }
 
