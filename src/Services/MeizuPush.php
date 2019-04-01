@@ -66,7 +66,7 @@ class MeizuPush
                          ->setOffLine(1)
                          ->setParameters(array('type'=>$type,'id'=>$id));
 
-        return $this->_mzPush->varnishedPush(array($deviceToken),
+        return $this->_mzPush->varnishedPush($deviceToken,
             $varnishedMessage);
     }
 
