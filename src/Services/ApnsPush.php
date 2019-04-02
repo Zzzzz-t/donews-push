@@ -168,7 +168,7 @@ class ApnsPush
         // $this->addRecipient($deviceToken);
         $this->setTitle($title);
         $this->setText($message);
-        $this->setBadge(1);
+        $this->setBadge(0);
         $this->setSound();
         $this->setType($type);
         $this->setId($id);
